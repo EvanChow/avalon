@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: avalon-zookeeper                     #指定了配置文件的应用名
+  cloud:
+    config:
+      uri: http://avalon-config:8040/    #Config server的uri
+      profile: dev                       #指定的环境
+      label: master                      #指定分支
+server:
+  port: 8086
+  context-path: /
+  management:
+    security:
+      enabled: false     #SpringBoot 1.5.X 以上默认开通了安全认证，如果不关闭会要求权限
