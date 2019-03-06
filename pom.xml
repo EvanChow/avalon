@@ -15,7 +15,9 @@
         <module>avalon-eureka</module>
         <module>avalon-config</module>
         <module>avalon-eva</module>
-        <module>avalon-zookeeper</module> <!---->
+        <module>avalon-zookeeper</module>
+        <module>avalon-websocket</module>
+        <!---->
     </modules>
 
     <!--Spring Boot配置-->
