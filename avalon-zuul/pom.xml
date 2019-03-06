@@ -28,8 +28,8 @@
         <!--Spring Boot-->
         <!--支持 Web 应用开发，包含 Tomcat 和 spring-mvc。 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
 
         <!--添加适用于生产环境的功能，如性能指标和监测等功能。 -->
