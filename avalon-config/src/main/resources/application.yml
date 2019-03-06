@@ -9,7 +9,7 @@ spring:
         native:
           searchLocations: classpath:/properties/
 server:
-  port: 8040
+  port: 8888
 eureka:
   client:
     serviceUrl:
