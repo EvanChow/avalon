@@ -1,0 +1,21 @@
+server:
+  port: 8760
+eureka:
+  instance:
+    hostname: avalon-eureka
+    #statusPageUrlPath: ${management.contextPath}/info #状态页面
+    #healthCheckUrlPath: ${management.contextPath}/health #健康监控
+    prefer-ip-address: true # 访问的路径变为 IP 地址
+    lease-renewal-interval-in-seconds: 30 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 90 # 如果现在超过了5秒的间隔（默认是90秒）
+    instance-id: ${spring.application.name}:${server.port} # 在信息列表时显示主机名称
+  client:  #客户端进行Eureka注册的配置
+    registerWithEureka: false #关闭自己作为客户端注册
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #单节点配置
+  server:
+    eviction-interval-timer-in-ms: 60000 #设置清理的间隔时间，而后这个时间使用的是毫秒单位（默认是60秒）
+  metadataMap:
+    instanceId: ${spring.application.name}:${random.value} #自定义的元数据
+

@@ -1,0 +1,19 @@
+# windows: C:\Windows\System32\drivers\etc
+127.0.0.1 localhost
+10.128.51.98 LJYY_APP5
+10.128.51.35 HR_MGM_APP2
+10.128.51.100 LJYY_APP7
+10.128.51.99 LJYY_APP6
+10.128.51.97 LJYY_APP4
+10.128.51.104 ljyy_zte_app3
+10.128.51.105 ljyy_zte_app4
+10.128.51.106 ljyy_zte_app5
+10.128.51.107 ljyy_zte_app6
+10.128.51.108 ljyy_zte_app7
+10.128.51.109 ljyy_zte_app8
+10.128.90.89 server01
+10.128.90.99 server03
+10.128.90.90 server02
+127.0.0.1  mmcc-eureka mmcc-common mmcc-config mmcc-service-other mmcc-service-other-api mmcc-service-query mmcc-service-query-api mmcc-zuul
+127.0.0.1  avalon-eureka avalon-eureka1 avalon-eureka2 avalon-eureka3 avalon-config avalon-eva avalon-zookeeper
+

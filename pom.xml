@@ -11,13 +11,17 @@
 
     <!--子模块工厂配置-->
     <modules>
-
         <module>avalon-eureka</module>
         <module>avalon-config</module>
         <module>avalon-eva</module>
         <module>avalon-zookeeper</module>
         <module>avalon-websocket</module>
-        <!---->
+        <module>avalon-ui</module>
+        <module>avalon-security</module>
+        <module>avalon-sleuth</module>
+        <module>avalon-task</module>
+        <module>avalon-web</module>
+        <module>avalon-zuul</module>
     </modules>
 
     <!--Spring Boot配置-->
