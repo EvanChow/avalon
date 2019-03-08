@@ -2,7 +2,7 @@ server:
   port: 8760
 eureka:
   instance:
-    hostname: avalon-eureka
+    hostname: avalon-eureka #表示设置该服务注册中心的hostname
     #statusPageUrlPath: ${management.contextPath}/info #状态页面
     #healthCheckUrlPath: ${management.contextPath}/health #健康监控
     prefer-ip-address: true # 访问的路径变为 IP 地址
@@ -11,7 +11,7 @@ eureka:
     instance-id: ${spring.application.name}:${server.port} # 在信息列表时显示主机名称
   client:  #客户端进行Eureka注册的配置
     registerWithEureka: false #关闭自己作为客户端注册
-    fetchRegistry: false
+    fetchRegistry: false #表示不去检索其他的服务，因为服务注册中心本身的职责就是维护服务实例，它也不需要去检索其他服务
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #单节点配置
   server:

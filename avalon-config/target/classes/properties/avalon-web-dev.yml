@@ -1,3 +1,8 @@
+server:
+  port: 8081
+  tomcat:
+    access_log_enabled: true
+    basedir: target/tomcat
 spring:
   boot:
     admin:
@@ -40,7 +45,3 @@ management:
   endpoint:
     health:
       show-details: always  #查看详细的应用健康信息需要配置
-server:
-  tomcat:
-    access_log_enabled: true
-    basedir: target/tomcat

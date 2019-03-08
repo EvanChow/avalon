@@ -1,19 +1,10 @@
+server:
+  port: 8081
 spring:
   boot:
     admin:
       instance:
         service-base-url: http://avalon-eureka:8760/eureka
-logging:
-  level:
-    root: INFO
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.avalon: DEBUG
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://avalon-eureka:8760/eureka
 feign:
   hystrix:
     enabled: true
@@ -29,4 +20,7 @@ management:
   endpoint:
     health:
       show-details: always  #查看详细的应用健康信息需要配置
-from: 233333333333
+zuul:
+  ignoredServices: '*'
+  routes:
+    avalon: /users/**
