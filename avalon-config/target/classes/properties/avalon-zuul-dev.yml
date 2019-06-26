@@ -1,10 +1,14 @@
-server:
-  port: 8081
 spring:
   boot:
     admin:
       instance:
         service-base-url: http://avalon-eureka:8760/eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://avalon-eureka:8760/eureka
+  instance:
+    prefer-ip-address: true
 feign:
   hystrix:
     enabled: true

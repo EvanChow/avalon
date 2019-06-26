@@ -1,5 +1,8 @@
 server:
   port: 8081
+  tomcat:
+    access_log_enabled: true
+    basedir: target/tomcat
 spring:
   boot:
     admin:
@@ -21,6 +24,12 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.avalon: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://avalon-eureka:8760/eureka
+  instance:
+    prefer-ip-address: true
 feign:
   hystrix:
     enabled: true
