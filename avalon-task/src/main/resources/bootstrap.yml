@@ -3,6 +3,8 @@ spring:
     name: avalon-task                  #指定了配置文件的应用名
   cloud:
     config:
+      username: admin
+      password: 654321
       discovery:
         enabled: true #开启配置服务发现
         service-id: avalon-config #配置服务实例名称
@@ -12,6 +14,9 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://avalon-eureka:8760/eureka
+      defaultZone: http://${security.username}:${security.password}@avalon-eureka:8760/eureka
   instance:
     prefer-ip-address: true
+security:
+  username: avalon
+  password: 123456

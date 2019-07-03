@@ -4,6 +4,8 @@ spring:
   profiles:
     active: eureka
   security:
+    basic:
+      enabled: true
     user:
       name: avalon
       password: 123456

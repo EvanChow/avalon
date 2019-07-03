@@ -5,6 +5,15 @@ spring:
     admin:
       instance:
         service-base-url: http://avalon-eureka:8760/eureka
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+  mvc:
+    static-path-pattern: /**
 logging:
   level:
     root: INFO
@@ -27,4 +36,6 @@ management:
   endpoint:
     health:
       show-details: always  #查看详细的应用健康信息需要配置
-from: 233333333333
+info:
+  version: 1.0
+  name: EVA管理系统

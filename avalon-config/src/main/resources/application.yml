@@ -8,12 +8,21 @@ spring:
       server:
         native:
           searchLocations: classpath:/properties/
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: 654321
+security:
+  username: avalon
+  password: 123456
 server:
   port: 8888
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://avalon-eureka:8760/eureka/
+      defaultZone: http://${security.username}:${security.password}@avalon-eureka:8760/eureka/
   instance:
     prefer-ip-address: true
 management:
