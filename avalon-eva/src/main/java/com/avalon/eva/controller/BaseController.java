@@ -2,6 +2,7 @@ package com.avalon.eva.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,19 @@ public class BaseController {
 
     @RequestMapping("/")
     public String index(HttpServletRequest request){
-        request.setAttribute("name",version);
-        request.setAttribute("version",name);
+        request.setAttribute("name",name);
+        request.setAttribute("version",version);
         return "index";
+    }
+
+    @RequestMapping("/jump")
+    public String jump(Model model, String html){
+        model.addAttribute("name",name);
+        model.addAttribute("version",version);
+        if(html==null&&"".equals(html)){
+            return "index";
+        }
+        return html;
     }
 
 }
