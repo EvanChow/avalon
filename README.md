@@ -11,3 +11,5 @@ SpringCloud
 端口:8088
 ###avalon-zookeeper zookeeper服务
 端口:8086
+###avalon-ui UI界面样例
+端口:8089

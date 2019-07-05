@@ -1,8 +1,5 @@
 server:
   port: 8085
-  tomcat:
-    access_log_enabled: true
-    basedir: target/tomcat
 spring:
   boot:
     admin:
