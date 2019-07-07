@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <title>Zookeeper</title>
+  <link rel="stylesheet" th:href="@{./layui/css/layui.css}" />
+  <link rel="stylesheet" th:href="@{./font-awesome/css/font-awesome.min.css}" />
+</head>
+<body>
+
+
+  <input th:value='${ip}' id="zkip" type="hidden">
+  <input th:value='${timeout}' id="zktimeout" type="hidden">
+  <input th:value='${sleep}' id="zksleep" type="hidden">
+  <input th:value='${node}' id="zknode" type="hidden">
+
+<table class="layui-hide" id="zk_table" lay-filter="zk_table"></table> 
+
+<script type="text/html" id="zktoolbar">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="addData">新增</button>
+    <button class="layui-btn layui-btn-sm" lay-event="saveData">保存</button>
+    <button class="layui-btn layui-btn-sm" lay-event="saveData">重置</button>
+  </div>
+</script>
+<script type="text/html" id="zkbar">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+   <script th:src="@{./layui/jquery-2.1.4.min.js}" type="text/javascript"></script>
+  <script th:src="@{./layui/layui.all.js}" type="text/javascript"></script>
+  <script>
+	layui.use('table', function(){
+  var table = layui.table,$ = layui.jquery; 
+
+  //方法级渲染
+  table.render({
+    elem: '#zk_table'
+    ,toolbar: '#zktoolbar'
+    ,url: './zookeeper/tablelist?&ip='+$('#zkip').val()+'&timeout='+$('#zktimeout').val()+'&sleep='+$('#zksleep').val()+'&node='+$('#zknode').val()
+    ,cols: [
+        [
+      {type:'checkbox', fixed: 'left'}
+      ,{field:'id', width:100, sort: true,title: 'ID'}
+      ,{field:'scheme', width:80,title: '模式'}
+      ,{field:'perms', width:420,title: '权限',templet:function (data) {
+            var result='';
+            for(var i=0;i<5;i++){
+               var perm=data.perms[i].perm;
+               var permname=data.perms[i].permname;
+               var yesno=data.perms[i].yesno;
+               if(yesno){
+                 result=result+'<input type="checkbox" name=""  title="'+permname+'" checked="" disabled="">';
+	            }else{
+	             result=result+'<input type="checkbox" name=""  title="'+permname+'" disabled>';
+	           }
+            }
+            return result;
+            
+		}}
+      ,{fixed: 'right',width:180, align:'center', toolbar: '#zkbar',title: '操作'}
+    ]
+      ]
+    ,id: 'zkrow' //lay-filter="demo"
+    ,page: true
+    ,height: 315
+  });
+  
+  
+  
+  
+  
+  
+  
+  //监听表格复选框选择
+  table.on('checkbox(zk_table)', function(obj){
+     //console.log(obj.checked); //当前是否选中状态
+     //console.log(obj.data); //选中行的相关数据
+     //console.log(obj.type); //如果触发的是全选，则为：all，如果触发的是单选，则为：one
+  });
+  
+  //头工具栏事件
+  table.on('toolbar(zk_table)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    console.log(checkStatus);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+      case 'isAll':
+        layer.msg(checkStatus.isAll ? '全选': '未全选');
+      break;
+    };
+  });
+  
+  //监听工具条
+  table.on('tool(zk_table)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'detail'){
+      layer.msg('ID：'+ data.id + ' 的查看操作');
+    } else if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+    }
+  });
+  
+ 
+ 
+});
+</script>
+
+ </body>
+</html>
