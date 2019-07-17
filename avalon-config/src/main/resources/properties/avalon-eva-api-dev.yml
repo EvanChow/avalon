@@ -1,0 +1,41 @@
+server:
+  port: 8085
+spring:
+  boot:
+    admin:
+      instance:
+        service-base-url: http://avalon-eureka:8760/eureka
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+  mvc:
+    static-path-pattern: /**
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.avalon: DEBUG
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+      base-path: /
+  endpoint:
+    health:
+      show-details: always  #查看详细的应用健康信息需要配置
+info:
+  version: 1.0
+  name: EVA API接口系統
