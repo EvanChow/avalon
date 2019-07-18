@@ -1,4 +1,5 @@
 # windows: C:\Windows\System32\drivers\etc
+# mac linux
 127.0.0.1 localhost
 127.0.0.1  avalon-eureka avalon-eureka1 avalon-eureka2 avalon-eureka3 avalon-config avalon-eva avalon-zookeeper avalon-zuul avalon-ui
 
