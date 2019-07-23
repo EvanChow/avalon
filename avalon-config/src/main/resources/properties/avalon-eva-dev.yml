@@ -23,7 +23,7 @@ logging:
     com.avalon: DEBUG
 feign:
   hystrix:
-    enabled: true
+    enabled: true #开启断路器
 management:
   endpoints:
     web:

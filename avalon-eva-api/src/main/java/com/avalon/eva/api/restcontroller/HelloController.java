@@ -12,4 +12,9 @@ public class HelloController {
         return new Json(true,"返回成功","2333333");
     }
 
+    @RequestMapping("/world")
+    public Json getIndex(){
+        return new Json(true,"返回成功","wohenhao");
+    }
+
 }

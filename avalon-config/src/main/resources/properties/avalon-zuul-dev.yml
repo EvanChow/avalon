@@ -23,4 +23,18 @@ management:
 zuul:
   ignoredServices: '*'
   routes:
-    avalon: /users/**
+    avalon-eva:
+      path: /eva/**
+      service: avalon-eva
+    avalon-ui:
+      path: /ui/**
+      service: avalon-ui
+    avalon-web:
+      path: /web/**
+      service: avalon-web
+    avalon-websocket:
+      path: /websocket/**
+      service: avalon-websocket
+    avalon-zookeeper:
+      path: /zookeeper/**
+      service: avalon-zookeeper

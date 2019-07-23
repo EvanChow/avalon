@@ -17,6 +17,8 @@ eureka:
       defaultZone: http://${security.username}:${security.password}@avalon-eureka:8760/eureka
   instance:
     prefer-ip-address: true
+  registry-fetch-interval-seconds: 5
+  fetch-registry: true
 security:
   username: avalon
   password: 123456
