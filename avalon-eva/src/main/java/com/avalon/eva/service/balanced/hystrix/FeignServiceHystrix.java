@@ -9,6 +9,7 @@ public class FeignServiceHystrix implements FeignService {
 
     @Override
     public Json getJson() {
+        System.out.println("服务降级。。。。。。。。");
         return new Json(false,"接口异常");
     }
 }

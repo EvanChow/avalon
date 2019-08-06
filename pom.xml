@@ -22,6 +22,9 @@
         <module>avalon-task</module>
         <module>avalon-web</module>
         <module>avalon-zuul</module>
+        <module>avalon-eva-api</module>
+        <module>avalon-system</module>
+        <module>avalon-sso</module>
     </modules>
 
     <!--Spring Boot配置-->
