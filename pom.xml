@@ -14,17 +14,16 @@
         <module>avalon-config</module>
         <module>avalon-eureka</module>
         <module>avalon-eva</module>
-        <module>avalon-zookeeper</module>
         <module>avalon-websocket</module>
         <module>avalon-ui</module>
-        <module>avalon-security</module>
-        <module>avalon-sleuth</module>
         <module>avalon-task</module>
         <module>avalon-web</module>
         <module>avalon-zuul</module>
         <module>avalon-eva-api</module>
         <module>avalon-system</module>
         <module>avalon-sso</module>
+        <module>avalon-common</module>
+        <module>avalon-security</module>
     </modules>
 
     <!--Spring Boot配置-->

@@ -9,7 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>avalon-security</artifactId>
+    <groupId>com.avalon.common</groupId>
+    <artifactId>avalon-common</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>avalon-common-base</module>
+        <module>avalon-common-config</module>
+        <module>avalon-common-core</module>
+        <module>avalon-common-util</module>
+        <module>avalon-common-zk</module>
+    </modules>
 
 
 </project>
