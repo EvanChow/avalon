@@ -9,7 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.avalon.security</groupId>
     <artifactId>avalon-security</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>avalon-security-app</module>
+        <module>avalon-security-core</module>
+        <module>avalon-security-feign</module>
+    </modules>
 
 
 </project>

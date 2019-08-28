@@ -1,4 +1,4 @@
-package com.avalon.security.app.avalonsecurityapp;
+package com.avalon.security.avalonsecurityapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

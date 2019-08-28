@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AvalonZipkinApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AvalonZipkinApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AvalonZipkinApplication.class, args);
+    }
 
 }
